@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectra</title>
+    <!-- Style link -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        .singleProduct {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            display: flex;
+
+        }
+
+        .image,
+        .details {
+            width: 50%;
+        }
+
+        .singleProduct .box .image .background {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-color: var(--dark-sandal);
+            z-index: -1;
+            top: -50%;
+            border-radius: 50%;
+            right: 0%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .singleProduct {
+                align-items: self-start;
+                justify-content: safe;
+            }
+
+            .box {
+                flex-direction: column;
+                margin: 150px 30px;
+            }
+
+            .singleProduct .box .image .background {
+                border-radius: 0px;
+                bottom: 0;
+                
+            }
+            .image{
+                overflow: hidden;
+            }
+
+            .image,
+            .details {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav id="nav">
+        <div class="menu1 row  align-items-center justify-content-evenly">
+            <div class="logo col-2 d-flex align-items-center">
+                <img src="./images/logo-removebg-preview.png" alt="logo">
+                <h1 class="mt-2">Spectra</h1>
+            </div>
+            <div class="search-bar p-3 px-4 col-4 d-flex align-items-center justify-content-evenly">
+                <input type="text" placeholder="Explore More..." class="w-100">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <ul class="menu col-3 d-flex gap-3 list-unstyled text-uppercase fs-5 mt-3 ">
+                <li class="active"><a class="text-dark text-decoration-none" href="./index.html">Home</a></li>
+                <li ><a class="text-dark text-decoration-none" href="./cart.html">Cart</a></li>
+                <li><a class="text-dark text-decoration-none" href="./orders.html">Orders</a></li>
+                <li><a class="text-dark text-decoration-none" href="./profile.html">Profile</a></li>
+            </ul>
+        </div>
+        <div class="menu2  align-items-center justify-content-between px-4 ">
+            <div class="logo col-2 d-flex align-items-center">
+                <img src="./images/logo-removebg-preview.png" alt="logo">
+                <h1 class="mt-2">Spectra</h1>
+            </div>
+            <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+            <ul id="menu"
+                class="menu col-3 d-flex align-items-start px-3 justify-content-center list-unstyled text-uppercase fs-5 mt-5 ">
+                <li class="mt-1"><i class="fa-solid fa-xmark" onclick="closeMenu()"></i></li>
+                <li class="mt-1 active"><a class="text-dark text-decoration-none" href="/index.html">Home</a></li>
+                <li class="mt-1"><a class="text-dark text-decoration-none" href="./cart.html">Cart</a></li>
+                <li class="mt-1 "><a class="text-dark text-decoration-none" href="./orders.html">Orders</a></li>
+                <li class="mt-1"><a class="text-dark text-decoration-none" href="./profile.html">Profile</a></li>
+                <div class="search-bar p-1 px-4 mt-2  d-flex align-items-center justify-content-evenly">
+                    <input type="text" placeholder="Explore More..." class="w-100">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <!-- Single Product Page -->
+    <div class="singleProduct container  ">
+        <div class="box  ">
+            <div class="image">
+                <div class="background"></div>
+                <img src="./images/women.png" width="70%" class="ms-5 pt-5" alt="">
+            </div>
+            <div class="details p-5 d-flex flex-column gap-2">
+                <h1>Women's Shirt</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aspernatur error esse facere laborum
+                    numquam. Dolores sunt repudiandae sed atque quaerat nihil ab repellat, autem commodi eaque, odit
+                    suscipit ipsa?</p>
+                <h4 class="fw-bold">$499/- <del class="fs-5 text-danger">$699</del></h4>
+                <h5>Select Size:</h5>
+                <div class="sizes d-flex gap-3">
+                    <div class="size">S</div>
+                    <div class="size">M</div>
+                    <div class="size">L</div>
+                    <div class="size">XL</div>
+                    <div class="size">XXL</div>
+                </div>
+                <div class="sizes fs-5 mt-2">
+                    Qty :
+                    <button onclick="decrease()">-</button><b id="qty" class="m-3 fs-5"></b><button
+                        onclick="increase()">+</button>
+                </div>
+                <div class="btns d-flex gap-3">
+
+                    <button class="px-3 mt-2 py-2 col-lg-4 col-sm-12 fs-5 fw-bolder rounded-3">Add To Cart</button>
+                    <button class="buynow px-3 mt-2 py-2 col-lg-4 col-sm-12 fs-5 fw-bolder rounded-3">Buy Now</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var qty = document.getElementById("qty")
+        quantity = 1
+        qty.innerHTML = quantity
+        qty2.innerHTML = quantity
+        function increase() {
+            quantity += 1;
+            qty.innerText = quantity
+        }
+        function decrease() {
+            if (quantity > 1) {
+                quantity -= 1;
+                qty.innerHTML = quantity
+            }
+
+        }
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
